@@ -33,11 +33,11 @@ int main(int argc, char** argv)
 
 	answer1 = solve2(numbers);
 
-	cout << answer1 << endl;
+	cout << "Product based on 2 numbers summing to 2020: " << endl << answer1 << endl;
 
 	answer2 = solve3(numbers);
 
-	cout << answer2 << endl;
+	cout << "Product based on 3 numbers summing to 2020: " << endl << answer2 << endl;
 }
 
 int solve2(vector<int>& numbers)
