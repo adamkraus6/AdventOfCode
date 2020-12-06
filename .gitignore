@@ -38,7 +38,7 @@
 
 # End of https://www.toptal.com/developers/gitignore/api/c++
 
-*.txt
+*.FileListAbsolute.txt
 *.tlog
 *.pdb
 *.log
