@@ -9,9 +9,15 @@ I chose to complete these problems in C++, after finishing a course learning it.
 ## Days
 
 [Day 1: Report Repair](2020/2020day1)
+
 [Day 2: Password Philosophy](2020/2020day2)
+
 [Day 3: Toboggan Trajectory](2020/2020day3)
+
 [Day 4: Passport Processing](2020/2020day4)
+
 [Day 5: Binary Boarding](2020/2020day5)
+
 [Day 6: Custom Customs](2020/2020day6)
+
 [Day 7: Handy Haversacks](2020/2020day7)
