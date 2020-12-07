@@ -3,18 +3,19 @@
 #include <string>
 #include <unordered_map>
 #include <vector>
-#include <map>
 
 using namespace std;
 
-int solveGoldBags(unordered_map<string, vector<string>>& whatBagsHolds);
-bool canHoldGold(string bagName, unordered_map<string, vector<string>>& whatBagsHolds);
+int solveGoldBags(unordered_map<string, unordered_map<string, int>>& whatBagsHolds);
+bool canHoldGold(string bagName, unordered_map<string, unordered_map<string, int>>& whatBagsHolds);
+int bagsIn(string baseBag, unordered_map<string, unordered_map<string, int>>& whatBagsHolds);
 
 int main(int argc, char** argv)
 {
 	ifstream fin;
 	string line;
 	int bagsHoldGold;
+	int bagsInGold;
 
 	if (argc != 2)
 	{
@@ -29,11 +30,11 @@ int main(int argc, char** argv)
 		exit(0);
 	}
 
-	unordered_map<string, vector<string>> whatBagsHolds;
+	unordered_map<string, unordered_map<string, int>> whatBagsHolds;
 
 	while (getline(fin, line))
 	{
-		vector<string> held;
+		unordered_map<string, int> held;
 		string parentBag;
 
 		int a = (int)line.find("bags");
@@ -45,12 +46,14 @@ int main(int argc, char** argv)
 			int next = a + 1;
 			while (next != string::npos && line.find_first_of("0123456789", next) != string::npos)
 			{
-				int num = (int)line.find_first_of("0123456789", next);
-				int bag = (int)line.find("bag", num);
-
-				string whatIsHeld = line.substr(num + 2, bag - num - 3);
+				int number = (int)line.find_first_of("0123456789", next);
+				int bag = (int)line.find("bag", number);
+				int s = (int)line.find_first_of(" ", number);
 				
-				held.push_back(whatIsHeld);
+				int numChildBags = stoi(line.substr(number, s - number));
+				string childBag = line.substr(s + 1, bag - s - 2);
+
+				held[childBag] = numChildBags;
 
 				next = bag + 1;
 			}
@@ -60,11 +63,15 @@ int main(int argc, char** argv)
 	}
 
 	bagsHoldGold = solveGoldBags(whatBagsHolds);
-
+	
 	cout << "Bags that can eventually hold gold" << endl << bagsHoldGold << endl;
+
+	bagsInGold = bagsIn("shiny gold", whatBagsHolds);
+
+	cout << "Bags inside shiny gold" << endl << bagsInGold << endl;
 }
 
-int solveGoldBags(unordered_map<string, vector<string>>& whatBagsHolds)
+int solveGoldBags(unordered_map<string, unordered_map<string, int>>& whatBagsHolds)
 {
 	int sum = 0;
 
@@ -79,20 +86,20 @@ int solveGoldBags(unordered_map<string, vector<string>>& whatBagsHolds)
 	return sum;
 }
 
-bool canHoldGold(string bagName, unordered_map<string, vector<string>>& whatBagsHolds)
+bool canHoldGold(string bagName, unordered_map<string, unordered_map<string, int>>& whatBagsHolds)
 {
 	bool can = false;
-	vector<string> canHold = whatBagsHolds[bagName];
+	unordered_map<string, int> canHold = whatBagsHolds[bagName];
 
-	for (int i = 0; i < (int)canHold.size(); i++)
+	for (auto it = canHold.begin(); it != canHold.end(); it++)
 	{
-		if (canHold[i] == "shiny gold")
+		if (it->first == "shiny gold")
 		{
 			can = true;
 			break;
 		}
 
-		can = (canHoldGold(canHold[i], whatBagsHolds)) ? true : can;
+		can = (canHoldGold(it->first, whatBagsHolds)) ? true : can;
 		if (can)
 		{
 			break;
@@ -100,4 +107,19 @@ bool canHoldGold(string bagName, unordered_map<string, vector<string>>& whatBags
 	}
 
 	return can;
+}
+
+int bagsIn(string baseBag, unordered_map<string, unordered_map<string, int>>& whatBagsHolds)
+{
+	int sum = (baseBag == "shiny gold") ? 0 : 1;
+	unordered_map<string, int> bag = whatBagsHolds[baseBag];
+
+	for (auto it = bag.begin(); it != bag.end(); it++)
+	{
+		string bagName = it->first;
+		int bagNum = it->second;
+		sum += bagNum * bagsIn(bagName, whatBagsHolds);
+	}
+
+	return sum;
 }
