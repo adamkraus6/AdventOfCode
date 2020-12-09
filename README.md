@@ -21,3 +21,7 @@ I chose to complete these problems in C++, after finishing a course learning it.
 [Day 6: Custom Customs](2020/2020day6)
 
 [Day 7: Handy Haversacks](2020/2020day7)
+
+[Day 8: Handheld Halting](2020/2020day8)
+
+[Day 9: Encoding Error](2020/2020day9)
