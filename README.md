@@ -14,20 +14,20 @@ In each project folder for a given day, data.txt will be the puzzle input that I
 
 ## Days
 
-[Day 1: Report Repair](2020/2020day1)
+[Day 1: Report Repair](2020/2020day1) Part 1: :heavy_check_mark: Part 2: :heavy_check_mark:
 
-[Day 2: Password Philosophy](2020/2020day2)
+[Day 2: Password Philosophy](2020/2020day2) Part 1: :heavy_check_mark: Part 2: :heavy_check_mark:
 
-[Day 3: Toboggan Trajectory](2020/2020day3)
+[Day 3: Toboggan Trajectory](2020/2020day3) Part 1: :heavy_check_mark: Part 2: :heavy_check_mark:
 
-[Day 4: Passport Processing](2020/2020day4)
+[Day 4: Passport Processing](2020/2020day4) Part 1: :heavy_check_mark: Part 2: :heavy_check_mark:
 
-[Day 5: Binary Boarding](2020/2020day5)
+[Day 5: Binary Boarding](2020/2020day5) Part 1: :heavy_check_mark: Part 2: :heavy_check_mark:
 
-[Day 6: Custom Customs](2020/2020day6)
+[Day 6: Custom Customs](2020/2020day6) Part 1: :heavy_check_mark: Part 2: :heavy_check_mark:
 
-[Day 7: Handy Haversacks](2020/2020day7)
+[Day 7: Handy Haversacks](2020/2020day7) Part 1: :heavy_check_mark: Part 2: :heavy_check_mark:
 
-[Day 8: Handheld Halting](2020/2020day8)
+[Day 8: Handheld Halting](2020/2020day8)Part 1: :heavy_check_mark: Part 2: :x:
 
-[Day 9: Encoding Error](2020/2020day9)
+[Day 9: Encoding Error](2020/2020day9) Part 1: :heavy_check_mark: Part 2: :heavy_check_mark:
