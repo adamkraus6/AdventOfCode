@@ -4,7 +4,13 @@ _Advent of Code_ is an Advent calendar of small programming puzzles for a variet
 
 You don't need a computer science background to participate - just a little programming knowledge and some [problem solving skills](https://www.reddit.com/r/adventofcode/comments/7kd8jt/what_would_you_say_are_the_minimal_skills_for/dre0uu3/) will get you pretty far. Nor do you need a fancy computer; every problem has a solution that completes in at most 15 seconds on ten-year-old hardware.
 
-I chose to complete these problems in C++, after finishing a course learning it.
+### Chosen Language
+
+I chose to complete these problems in C++, after finishing a course learning it. Many of my solutions have not be very nice, but I hope to come back to them at some point to refactor them.
+
+### Puzzle Inputs
+
+In each project folder for a given day, data.txt will be the puzzle input that I was given. Any other data files, like data2.txt, are examples given from the problem explanation.
 
 ## Days
 
