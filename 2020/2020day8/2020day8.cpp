@@ -4,8 +4,7 @@ using namespace std;
 
 int solveFirstRun(vector<string> instructions, vector<bool> ran);
 int solveFixedRun(vector<string> instructions, vector<bool> ran);
-bool isInfinite(vector<string> instructions, vector<bool> ran);
-int getAcc(vector<string> instructions);
+int tryRun(vector<string> instructions, vector<bool> ran);
 
 int main(int argc, char** argv)
 {
@@ -57,6 +56,8 @@ int solveFirstRun(vector<string> instructions, vector<bool> ran)
 		string cmd = instruction.substr(0, 3);
 		int value = stoi(instruction.substr(4));
 
+		ran[i] = true;
+
 		if (cmd == "acc")
 		{
 			acc += value;
@@ -65,8 +66,6 @@ int solveFirstRun(vector<string> instructions, vector<bool> ran)
 		{
 			i += value - 1;
 		}
-
-		ran[i] = true;
 	}
 
 	return acc;
@@ -76,8 +75,58 @@ int solveFixedRun(vector<string> instructions, vector<bool> ran)
 {
 	for (int i = 0; i < (int)instructions.size(); i++)
 	{
+		string cmd = instructions[i].substr(0, 3);
+		if (cmd == "jmp")
+		{
+			instructions[i].replace(0, 3, "nop");
+		}
+		else if (cmd == "nop")
+		{
+			instructions[i].replace(0, 3, "jmp");
+		}
+
+		int run = tryRun(instructions, ran);
+		if (run != 0)
+		{
+			return run;
+		}
 		
+		instructions[i].replace(0, 3, cmd);
 	}
 
 	return 0;
+}
+
+int tryRun(vector<string> instructions, vector<bool> ran)
+{
+	int acc = 0;
+	
+	for (int i = 0; i < (int)instructions.size(); i++)
+	{
+		if (ran[i] == true)
+		{
+			return 0;
+		}
+		string instruction = instructions[i];
+		string cmd = instruction.substr(0, 3);
+		int value = stoi(instruction.substr(4));
+
+		ran[i] = true;
+
+		if (cmd == "acc")
+		{
+			acc += value;
+		}
+		else if (cmd == "jmp")
+		{
+			i += value - 1;
+		}
+
+		if (i < 0)
+		{
+			return 0;
+		}
+	}
+
+	return acc;
 }
