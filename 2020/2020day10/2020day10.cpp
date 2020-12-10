@@ -5,12 +5,14 @@ using namespace std;
 
 int solveJoltDiff(vector<int> adapters);
 bool findAdapter(vector<int> arr, int target);
+long long solveDistinctArrangements(vector<int> adapters);
 
 int main(int argc, char** argv)
 {
 	ifstream fin;
 	vector<int> adapters;
 	int value, joltDiff;
+	long long distinctArr;
 
 	if (argc != 2)
 	{
@@ -30,11 +32,13 @@ int main(int argc, char** argv)
 		adapters.push_back(value);
 	}
 
-	cout << adapters.size() << endl;
-
 	joltDiff = solveJoltDiff(adapters);
 
 	cout << "Product of number of one/three jolt adapter differences" << endl << joltDiff << endl;
+
+	distinctArr = solveDistinctArrangements(adapters);
+
+	cout << "Distinct arrangements of adapters" << endl << distinctArr << endl;
 }
 
 int solveJoltDiff(vector<int> adapters)
@@ -78,7 +82,25 @@ bool findAdapter(vector<int> arr, int target)
 	return false;
 }
 
-int solveDistinctArrangements(vector<int> adapters)
+long long solveDistinctArrangements(vector<int> adapters)
 {
-	return 0;
+	sort(adapters.begin(), adapters.end());
+	int streak = (adapters[0] == 1) ? 1 : 0;
+	long long arrangements = 1;
+	vector<int> mult = { 1, 1, 2, 4, 7 };
+
+	for (int i = 0; i < (int)adapters.size() - 1; i++)
+	{
+		if (adapters[i] + 1 == adapters[i + 1])
+		{
+			streak++;
+		}
+		else {
+			arrangements *= mult[streak];
+			streak = 0;
+		}
+	}
+	arrangements *= mult[streak];
+
+	return arrangements;
 }
