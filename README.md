@@ -26,3 +26,4 @@ In each project folder for a given day, data.txt will be the puzzle input that I
 | [Day 7: Handy Haversacks](2020/2020day7) | :heavy_check_mark: | :heavy_check_mark: |
 | [Day 8: Handheld Halting](2020/2020day8) | :heavy_check_mark: | :heavy_check_mark: |
 | [Day 9: Encoding Error](2020/2020day9) | :heavy_check_mark: | :heavy_check_mark: |
+| [Day 10: Adapter Array](2020/2020day10) | :heavy_check_mark: | :x: |
