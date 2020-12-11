@@ -131,3 +131,7 @@ iyr:2010 hgt:158cm hcl:#b6652a ecl:blu byr:1944 eyr:2021 pid:093154719
 Count the number of  _valid_  passports - those that have all required fields  _and valid values_. Continue to treat  `cid`  as optional.  _In your batch file, how many passports are valid?_
 
 Your puzzle answer was  `111`.
+
+## ToDo:
+
+1. Clean up adding and validating fields

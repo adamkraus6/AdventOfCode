@@ -131,3 +131,7 @@ You glance back down at your bag and try to remember why you brought so many ada
 _What is the total number of distinct ways you can arrange the adapters to connect the charging outlet to your device?_
 
 Your puzzle answer was  `56693912375296`.
+
+## ToDo:
+
+1. Better solution for distinct arrangments (look into memoization/caching recursive calls)

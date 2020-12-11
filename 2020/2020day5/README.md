@@ -54,3 +54,7 @@ Your seat wasn't at the very front or back, though; the seats with IDs +1 and -1
 _What is the ID of your seat?_
 
 Your puzzle answer was  `651`.
+
+## ToDo:
+
+1. Combine highest ID and lowest ID function into one (returning a struct?)

@@ -94,3 +94,7 @@ After the last instruction (`acc +6`), the program terminates by attempting to r
 Fix the program so that it terminates normally by changing exactly one  `jmp`  (to  `nop`) or  `nop`  (to  `jmp`).  _What is the value of the accumulator after the program terminates?_
 
 Your puzzle answer was  `846`.
+
+## ToDo:
+
+1. Possibly remove function/combine into one

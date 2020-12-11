@@ -243,3 +243,7 @@ Again, at this point, people stop shifting around and the seating area reaches e
 Given the new visibility method and the rule change for occupied seats becoming empty, once equilibrium is reached,  _how many seats end up occupied?_
 
 Your puzzle answer was  `2174`.
+
+## ToDo:
+
+1. Refactor checking adjacent seats
