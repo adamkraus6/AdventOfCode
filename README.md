@@ -28,3 +28,4 @@ In each project folder for a given day, data.txt will be the puzzle input that I
 | [Day 9: Encoding Error](2020/2020day9) | :heavy_check_mark: | :heavy_check_mark: | :x: |
 | [Day 10: Adapter Array](2020/2020day10) | :heavy_check_mark: | :heavy_check_mark: | :x: |
 | [Day 11: Seating System](2020/2020day11) | :heavy_check_mark: | :heavy_check_mark: | :x: |
+| [Day 12: Rain Risk](2020/2020day12) | :heavy_check_mark: | :heavy_check_mark: | :x: |
