@@ -14,3 +14,4 @@
 | [Day 10: Adapter Array](2020/2020day10) | :heavy_check_mark: | :heavy_check_mark: | :x: |
 | [Day 11: Seating System](2020/2020day11) | :heavy_check_mark: | :heavy_check_mark: | :x: |
 | [Day 12: Rain Risk](2020/2020day12) | :heavy_check_mark: | :heavy_check_mark: | :x: |
+| [Day 13: Shuttle Search](2020/2020day13) | :heavy_check_mark: | :heavy_exclamation_mark: | :x: |
