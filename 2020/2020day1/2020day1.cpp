@@ -1,17 +1,12 @@
-#include <iostream>
-#include <fstream>
-#include <vector>
+#include "../../max.h"
 
 using namespace std;
-
-int solve2(vector<int>& numbers);
-int solve3(vector<int>& numbers);
 
 int main(int argc, char** argv)
 {
 	ifstream fin;
 	vector<int> numbers;
-	int num, answer1, answer2;
+	int num;
 
 	if (argc != 2)
 	{
@@ -31,46 +26,13 @@ int main(int argc, char** argv)
 		numbers.push_back(num);
 	}
 
-	answer1 = solve2(numbers);
+	sort(numbers.begin(), numbers.end());
 
-	cout << "Product based on 2 numbers summing to 2020: " << endl << answer1 << endl;
+	vector<int> two = sumNum(numbers, 2, 2020);
 
-	answer2 = solve3(numbers);
+	cout << "Product based on 2 numbers summing to 2020: " << endl << accumulate(two.begin(), two.end(), 1, std::multiplies<int>()) << endl;
 
-	cout << "Product based on 3 numbers summing to 2020: " << endl << answer2 << endl;
-}
+	vector<int> three = sumNum(numbers, 3, 2020);
 
-int solve2(vector<int>& numbers)
-{
-	for (int i = 0; i < numbers.size(); i++)
-	{
-		for (int j = 0; j < numbers.size(); j++)
-		{
-			if (i != j && numbers[i] + numbers[j] == 2020)
-			{
-				return numbers[i] * numbers[j];
-			}
-		}
-	}
-
-	return 0;
-}
-
-int solve3(vector<int>& numbers)
-{
-	for (int i = 0; i < numbers.size(); i++)
-	{
-		for (int j = 0; j < numbers.size(); j++)
-		{
-			for (int k = 0; k < numbers.size(); k++)
-			{
-				if (i != j != k && numbers[i] + numbers[j] + numbers[k] == 2020)
-				{
-					return numbers[i] * numbers[j] * numbers[k];
-				}
-			}
-		}
-	}
-
-	return 0;
+	cout << "Product based on 3 numbers summing to 2020: " << endl << accumulate(three.begin(), three.end(), 1, std::multiplies<int>()) << endl;
 }
