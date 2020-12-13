@@ -16,7 +16,22 @@ std::vector<std::string> split(const std::string& s, char delimiter)
     return tokens;
 }
 
-
+/** ***************************************************************************
+ * @author Adam Kraus
+ *
+ * @par Description:
+ * Checks if there are k numbers in arr that add to sum
+ *
+ * @param[in] arr - array of numbers supplied
+ * @param[in] k - amount of numbers that add
+ * @param[in] sum - what the k numbers should add to
+ * @param[in] n - current layer of recursion
+ * @param[in] numbers - current numbers that could add
+ * @param[in] used - determines if a number is currently being used to add
+ *
+ * @returns array of numbers that add to sum if possible
+ *
+ *****************************************************************************/
 std::vector<int> sumNum(std::vector<int> arr, int k, int sum, int n = 0, std::vector<int> numbers = {}, std::vector<bool> used = {})
 {
     // check default values
