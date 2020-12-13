@@ -60,3 +60,9 @@ int solveFirstDeparture(vector<int> IDs, int timestamp)
 
 	return (firstDepart - timestamp) * busID;
 }
+
+/*
+Part 2 Answer: 530015546283687 (NOT FROM MY SOLUTION)
+https://github.com/zv0n/advent_of_code_2020/blob/master/13/main.cpp
+Look into Chinese Remainder Theorem
+*/
