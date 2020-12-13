@@ -2,7 +2,7 @@
 
 | Problem | Part 1: | Part 2 | Refactored |
 | ------- | ------- | ------ | ---------- |
-| [Day 1: Report Repair](2020day1) | :heavy_check_mark: | :heavy_check_mark: | :x: |
+| [Day 1: Report Repair](2020day1) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | [Day 2: Password Philosophy](2020day2) | :heavy_check_mark: | :heavy_check_mark: | :x: |
 | [Day 3: Toboggan Trajectory](2020day3) | :heavy_check_mark: | :heavy_check_mark: | :x: |
 | [Day 4: Passport Processing](2020day4) | :heavy_check_mark: | :heavy_check_mark: | :x: |
