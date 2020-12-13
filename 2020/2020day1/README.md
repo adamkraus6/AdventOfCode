@@ -38,7 +38,3 @@ Using the above example again, the three entries that sum to  `2020`  are  `979`
 In your expense report,  _what is the product of the three entries that sum to  `2020`?_
 
 Your puzzle answer was  `193598720`.
-
-## ToDo:
-
-1. Create function for checking if possible sum of X numbers in array
