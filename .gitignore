@@ -49,3 +49,4 @@
 *.ilk
 *.ipch
 *.opendb
+.vscode
