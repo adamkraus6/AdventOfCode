@@ -10,7 +10,7 @@
 | [Day 6: Custom Customs](2020day6) | :heavy_check_mark: | :heavy_check_mark: | :heavy_minus_sign: |
 | [Day 7: Handy Haversacks](2020day7) | :heavy_check_mark: | :heavy_check_mark: | :heavy_minus_sign: |
 | [Day 8: Handheld Halting](2020day8) | :heavy_check_mark: | :heavy_check_mark: | :x: |
-| [Day 9: Encoding Error](2020day9) | :heavy_check_mark: | :heavy_check_mark: | :x: |
+| [Day 9: Encoding Error](2020day9) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | [Day 10: Adapter Array](2020day10) | :heavy_check_mark: | :heavy_check_mark: | :x: |
 | [Day 11: Seating System](2020day11) | :heavy_check_mark: | :heavy_check_mark: | :x: |
 | [Day 12: Rain Risk](2020day12) | :heavy_check_mark: | :heavy_check_mark: | :heavy_minus_sign: |
