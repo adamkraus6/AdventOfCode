@@ -16,28 +16,13 @@ std::vector<std::string> split(const std::string& s, char delimiter)
     return tokens;
 }
 
-/** ***************************************************************************
- * @author Adam Kraus
- *
- * @par Description:
- * Checks if there are k numbers in arr that add to sum
- *
- * @param[in] arr - array of numbers supplied
- * @param[in] k - amount of numbers that add
- * @param[in] sum - what the k numbers should add to
- * @param[in] n - current layer of recursion
- * @param[in] numbers - current numbers that could add
- * @param[in] used - determines if a number is currently being used to add
- *
- * @returns array of numbers that add to sum if possible
- *
- *****************************************************************************/
-std::vector<int> sumNum(std::vector<int> arr, int k, int sum, int n = 0, std::vector<int> numbers = {}, std::vector<bool> used = {})
+template <typename T, typename A = allocator<T>>
+std::vector<T, A> sumNum(std::vector<T, A> arr, int k, T sum, int layer = 0, std::vector<T, A> numbers = {}, std::vector<bool> used = {})
 {
     // check default values
     if(numbers.size() == 0)
     {
-        std::vector<int> n;
+        std::vector<T, A> n;
         for(int i = 0; i < k; i++)
         {
             n.push_back(0);
@@ -55,9 +40,9 @@ std::vector<int> sumNum(std::vector<int> arr, int k, int sum, int n = 0, std::ve
     }
 
     // base case
-    if(n == k)
+    if(layer == k)
     {
-        if(accumulate(numbers.begin(), numbers.end(), 0) == sum)
+        if(std::accumulate(numbers.begin(), numbers.end(), (T)0) == sum)
         {
             return numbers;
         } else {
@@ -71,8 +56,8 @@ std::vector<int> sumNum(std::vector<int> arr, int k, int sum, int n = 0, std::ve
         if(!used[i])
         {
             used[i] = true;
-            numbers[n] = arr[i];
-            std::vector<int> test = sumNum(arr, k, sum, n + 1, numbers, used);
+            numbers[layer] = arr[i];
+            std::vector<T, A> test = sumNum(arr, k, sum, layer + 1, numbers, used);
             used[i] = false;
             if(test.size() > 0)
             {
@@ -93,4 +78,16 @@ bool inBetween(int num, int min, int max, bool inclusive)
     else {
         return min < num&& num < max;
     }
+}
+
+std::vector<long long> subset(std::vector <long long> arr, int min, int max)
+{
+    std::vector<long long> sub;
+
+    for (int i = min; i < max; i++)
+    {
+        sub.push_back(arr[i]);
+    }
+
+    return sub;
 }

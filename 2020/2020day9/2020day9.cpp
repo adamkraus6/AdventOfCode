@@ -3,27 +3,18 @@
 using namespace std;
 
 int solveFirstWrongNumber(vector<long long> numbers);
+vector<long long> subset(vector<long long> arr, int min, int max);
 long long solveEncryptionWeakness(vector<long long> numbers, int invalidNumIndex);
 
 int main(int argc, char** argv)
 {
 	ifstream fin;
+	fin.open("data.txt");
+	if (!fin.is_open()) exit(0);
+
 	vector<long long> numbers;
 	int firstInvalidIndex;
 	long long encryptionWeakness, value;
-
-	if (argc != 2)
-	{
-		cout << "Usage: 2020day9.exe data" << endl;
-		exit(0);
-	}
-
-	fin.open(argv[1]);
-	if (!fin.is_open())
-	{
-		cout << "Unable to open file " << argv[1] << endl;
-		exit(0);
-	}
 
 	while (fin >> value)
 	{
@@ -43,23 +34,9 @@ int solveFirstWrongNumber(vector<long long> numbers)
 {
 	for (int i = 25; i < (int)numbers.size(); i++)
 	{
-		bool hasSum = false;
-
-		for (int j = i - 25; j < i; j++)
-		{
-			for (int k = i - 25; k < i; k++)
-			{
-				if (j != k)
-				{
-					if (numbers[j] + numbers[k] == numbers[i])
-					{
-						hasSum = true;
-					}
-				}
-			}
-		}
-
-		if (!hasSum)
+		vector<long long> past = subset(numbers, i - 25, i);
+		vector<long long> sum = sumNum(past, 2, numbers[i]);
+		if (sum.size() < 2)
 		{
 			return i;
 		}
