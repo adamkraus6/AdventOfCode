@@ -89,7 +89,3 @@ To find the  _encryption weakness_, add together the  _smallest_  and  _largest_
 _What is the encryption weakness in your XMAS-encrypted list of numbers?_
 
 Your puzzle answer was  `96081673`.
-
-## ToDo:
-
-1. Implement sum function from Day 1
