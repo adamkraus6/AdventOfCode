@@ -84,16 +84,13 @@ std::vector<int> sumNum(std::vector<int> arr, int k, int sum, int n = 0, std::ve
     return {};
 }
 
-template <typename T, typename A>
-bool find(std::vector<T, A> const& arr, T target)
+bool inBetween(int num, int min, int max, bool inclusive)
 {
-    for(int i = 0; i < (int)arr.size(); i++)
+    if (inclusive)
     {
-        if(arr[i] == target)
-        {
-            return true;
-        }
+        return min <= num && num <= max;
     }
-
-    return false;
+    else {
+        return min < num&& num < max;
+    }
 }
