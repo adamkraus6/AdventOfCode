@@ -5,21 +5,11 @@ using namespace std;
 int main(int argc, char** argv)
 {
 	ifstream fin;
+	fin.open("data.txt");
+	if (!fin.is_open()) exit(0);
+
 	vector<int> numbers;
 	int num;
-
-	if (argc != 2)
-	{
-		cout << "Usage: 2020day1.exe data" << endl;
-		exit(0);
-	}
-
-	fin.open(argv[1]);
-	if (!fin.is_open())
-	{
-		cout << "Unable to open file " << argv[1] << endl;
-		exit(0);
-	}
 
 	while (fin >> num)
 	{
