@@ -42,7 +42,3 @@ Given the same example list from above:
 _How many passwords are valid_  according to the new interpretation of the policies?
 
 Your puzzle answer was  `694`.
-
-## ToDo:
-
-1. Cleaner reading in of information
