@@ -1,4 +1,6 @@
 #include "../../max.h"
+#include <fstream>
+#include <iostream>>
 
 using namespace std;
 
@@ -6,26 +8,15 @@ int solveFirstRun(vector<string> instructions, vector<bool> ran);
 int solveFixedRun(vector<string> instructions, vector<bool> ran);
 int tryRun(vector<string> instructions, vector<bool> ran);
 
-int main(int argc, char** argv)
+int main()
 {
 	ifstream fin;
+	fin.open("data.txt");
+	if (!fin.is_open()) exit(0);
+
 	vector<string> instructions;
 	vector<bool> ran;
 	string line;
-	int firstRunAccumulator, fixedRunAccumulator;
-
-	if (argc != 2)
-	{
-		cout << "Usage: 2020day8.exe data" << endl;
-		exit(0);
-	}
-
-	fin.open(argv[1]);
-	if (!fin.is_open())
-	{
-		cout << "Unable to open file " << argv[1] << endl;
-		exit(0);
-	}
 
 	while (getline(fin, line))
 	{
@@ -33,13 +24,11 @@ int main(int argc, char** argv)
 		ran.push_back(false);
 	}
 
-	firstRunAccumulator = solveFirstRun(instructions, ran);
+	fin.close();
 
-	cout << "Accumulator value after instructions run once" << endl << firstRunAccumulator << endl;
+	cout << "Accumulator value after instructions run once" << endl << solveFirstRun(instructions, ran) << endl;
 
-	fixedRunAccumulator = solveFixedRun(instructions, ran);
-
-	cout << "Accumulator value after changing one instruction" << endl << fixedRunAccumulator << endl;
+	cout << "Accumulator value after changing one instruction" << endl << solveFixedRun(instructions, ran) << endl;
 }
 
 int solveFirstRun(vector<string> instructions, vector<bool> ran)

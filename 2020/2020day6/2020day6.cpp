@@ -10,25 +10,14 @@ using namespace std;
 int solveAnswersAny(vector<string>& answers);
 int solveAnswersEvery(vector<string>& answers);
 
-int main(int argc, char** argv)
+int main()
 {
 	ifstream fin;
+	fin.open("data.txt");
+	if (!fin.is_open()) exit(0);
+
 	vector<string> answers;
 	string line, a;
-	int answeredAny, answeredEvery;
-
-	if (argc != 2)
-	{
-		cout << "Usage: 2020day6.exe data" << endl;
-		exit(0);
-	}
-
-	fin.open(argv[1]);
-	if (!fin.is_open())
-	{
-		cout << "Unable to open file " << argv[1] << endl;
-		exit(0);
-	}
 
 	while (getline(fin, line))
 	{
@@ -42,15 +31,13 @@ int main(int argc, char** argv)
 		}
  	}
 
+	fin.close();
+
 	answers.push_back(a);
 
-	answeredAny = solveAnswersAny(answers);
+	cout << "Sum of number of questions anyone answered" << endl << solveAnswersAny(answers) << endl;
 
-	cout << "Sum of number of questions anyone answered" << endl << answeredAny << endl;
-
-	answeredEvery = solveAnswersEvery(answers);
-
-	cout << "Sum of number of questions everyone answered" << endl << answeredEvery << endl;
+	cout << "Sum of number of questions everyone answered" << endl << solveAnswersEvery(answers) << endl;
 }
 
 int solveAnswersAny(vector<string>& answers)

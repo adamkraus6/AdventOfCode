@@ -1,33 +1,27 @@
 #include "../../max.h"
+#include <iostream>
+#include <fstream>
 
 using namespace std;
 
 int solveFirstDeparture(vector<int> IDs, int timestamp);
 
-int main(int argc, char** argv)
+int main()
 {
 	ifstream fin;
+	fin.open("data.txt");
+	if(!fin.is_open()) exit(0);
+
 	string line;
 	int timestamp, firstDepart;
-
-	if (argc != 2)
-	{
-		cout << "Usage: 2020day13.exe data" << endl;
-		exit(0);
-	}
-
-	fin.open(argv[1]);
-	if (!fin.is_open())
-	{
-		cout << "Unable to open file " << argv[1] << endl;
-		exit(0);
-	}
 
 	getline(fin, line);
 	timestamp = stoi(line);
 
 	getline(fin, line);
 	vector<string> buses = split(line, ',');
+
+	fin.close();
 
 	vector<int> busIDs;
 	for (int i = 0; i < (int)buses.size(); i++)
@@ -38,9 +32,7 @@ int main(int argc, char** argv)
 		}
 	}
 
-	firstDepart = solveFirstDeparture(busIDs, timestamp);
-
-	cout << "Product of minute wait and Bus ID for first departure" << endl << firstDepart << endl;
+	cout << "Product of minute wait and Bus ID for first departure" << endl << solveFirstDeparture(busIDs, timestamp) << endl;
 }
 
 int solveFirstDeparture(vector<int> IDs, int timestamp)

@@ -1,5 +1,7 @@
 #include "../../max.h"
 #include <algorithm>
+#include <fstream>
+#include <iostream>
 
 using namespace std;
 
@@ -7,38 +9,25 @@ int solveJoltDiff(vector<int> adapters);
 bool findAdapter(vector<int> arr, int target);
 long long solveDistinctArrangements(vector<int> adapters);
 
-int main(int argc, char** argv)
+int main()
 {
 	ifstream fin;
+	fin.open("data.txt");
+	if(!fin.is_open()) exit(0);
+
 	vector<int> adapters;
-	int value, joltDiff;
-	long long distinctArr;
-
-	if (argc != 2)
-	{
-		cout << "Usage: 2020day10.exe data" << endl;
-		exit(0);
-	}
-
-	fin.open(argv[1]);
-	if (!fin.is_open())
-	{
-		cout << "Unable to open file " << argv[1] << endl;
-		exit(0);
-	}
+	int value;
 
 	while (fin >> value)
 	{
 		adapters.push_back(value);
 	}
 
-	joltDiff = solveJoltDiff(adapters);
+	fin.close();
 
-	cout << "Product of number of one/three jolt adapter differences" << endl << joltDiff << endl;
+	cout << "Product of number of one/three jolt adapter differences" << endl << solveJoltDiff(adapters) << endl;
 
-	distinctArr = solveDistinctArrangements(adapters);
-
-	cout << "Distinct arrangements of adapters" << endl << distinctArr << endl;
+	cout << "Distinct arrangements of adapters" << endl << solveDistinctArrangements(adapters) << endl;
 }
 
 int solveJoltDiff(vector<int> adapters)

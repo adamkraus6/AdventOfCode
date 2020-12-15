@@ -1,42 +1,32 @@
 #include "../../max.h"
+#include <iostream>
+#include <fstream>
 
 using namespace std;
 
 int solveManhattanDist(vector<string> actions);
 int solveWaypointManhattanDist(vector<string> actions);
 
-int main(int argc, char** argv)
+int main()
 {
 	ifstream fin;
+	fin.open("data.txt");
+	if(!fin.is_open()) exit(0);
+
 	vector<string> actions;
 	string line;
 	int manhattanDist, waypointManhattanDist;
-
-	if (argc != 2)
-	{
-		cout << "Usage: 2020day12.exe data" << endl;
-		exit(0);
-	}
-
-	fin.open(argv[1]);
-	if (!fin.is_open())
-	{
-		cout << "Unable to open file " << argv[1] << endl;
-		exit(0);
-	}
 
 	while (getline(fin, line))
 	{
 		actions.push_back(line);
 	}
 
-	manhattanDist = solveManhattanDist(actions);
+	fin.close();
 
-	cout << "Manhattan distance after actions" << endl << manhattanDist << endl;
+	cout << "Manhattan distance after actions" << endl << solveManhattanDist(actions) << endl;
 
-	waypointManhattanDist = solveWaypointManhattanDist(actions);
-
-	cout << "Manhattan distance after waypoint actions" << endl << waypointManhattanDist << endl;
+	cout << "Manhattan distance after waypoint actions" << endl << solveWaypointManhattanDist(actions) << endl;
 }
 
 int solveManhattanDist(vector<string> actions)

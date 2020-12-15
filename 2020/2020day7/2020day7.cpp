@@ -10,26 +10,13 @@ int solveGoldBags(unordered_map<string, unordered_map<string, int>>& whatBagsHol
 bool canHoldGold(string bagName, unordered_map<string, unordered_map<string, int>>& whatBagsHolds);
 int bagsIn(string baseBag, unordered_map<string, unordered_map<string, int>>& whatBagsHolds);
 
-int main(int argc, char** argv)
+int main()
 {
 	ifstream fin;
+	fin.open("data.txt");
+	if (!fin.is_open()) exit(0);
+
 	string line;
-	int bagsHoldGold;
-	int bagsInGold;
-
-	if (argc != 2)
-	{
-		cout << "Usage: 2020day7.exe data" << endl;
-		exit(0);
-	}
-
-	fin.open(argv[1]);
-	if (!fin.is_open())
-	{
-		cout << "Unable to open file " << argv[1] << endl;
-		exit(0);
-	}
-
 	unordered_map<string, unordered_map<string, int>> whatBagsHolds;
 
 	while (getline(fin, line))
@@ -62,13 +49,11 @@ int main(int argc, char** argv)
 		whatBagsHolds[parentBag] = held;
 	}
 
-	bagsHoldGold = solveGoldBags(whatBagsHolds);
-	
-	cout << "Bags that can eventually hold gold" << endl << bagsHoldGold << endl;
+	fin.close();
 
-	bagsInGold = bagsIn("shiny gold", whatBagsHolds);
+	cout << "Bags that can eventually hold gold" << endl << solveGoldBags(whatBagsHolds) << endl;
 
-	cout << "Bags inside shiny gold" << endl << bagsInGold << endl;
+	cout << "Bags inside shiny gold" << endl << bagsIn("shiny gold", whatBagsHolds) << endl;
 }
 
 int solveGoldBags(unordered_map<string, unordered_map<string, int>>& whatBagsHolds)

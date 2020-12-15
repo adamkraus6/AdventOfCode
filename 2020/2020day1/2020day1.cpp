@@ -1,8 +1,10 @@
 #include "../../max.h"
+#include <fstream>
+#include <iostream>
 
 using namespace std;
 
-int main(int argc, char** argv)
+int main()
 {
 	ifstream fin;
 	fin.open("data.txt");
@@ -15,6 +17,8 @@ int main(int argc, char** argv)
 	{
 		numbers.push_back(num);
 	}
+
+	fin.close();
 
 	sort(numbers.begin(), numbers.end());
 

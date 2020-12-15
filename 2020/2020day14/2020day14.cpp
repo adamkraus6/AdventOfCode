@@ -1,5 +1,7 @@
 #include "../../max.h"
 #include <unordered_map>
+#include <iostream>
+#include <fstream>
 
 using namespace std;
 
@@ -11,6 +13,7 @@ int main()
 	ifstream fin;
 	fin.open("data.txt");
 	if (!fin.is_open()) exit(0);
+
 	string line;
 	vector<string> lines;
 
@@ -18,6 +21,8 @@ int main()
 	{
 		lines.push_back(line);
 	}
+
+	fin.close();
 
 	cout << solveSumMemory(lines) << endl;
 }

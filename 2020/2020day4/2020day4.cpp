@@ -1,7 +1,6 @@
+#include "../../max.h"
 #include <fstream>
 #include <iostream>
-#include <string>
-#include <vector>
 #include <regex>
 
 using namespace std;
@@ -32,26 +31,16 @@ void addPassport(vector<passport>& passports, string& p);
 int solveFields(vector<passport>& passports);
 int solveValidatedFields(vector<passport>& passports);
 
-int main(int argc, char** argv)
+vector<string> fields = { "byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid" };
+
+int main()
 {
-	vector<string> fields = { "byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid" };
 	ifstream fin;
+	fin.open("data.txt");
+	if (!fin.is_open()) exit(0);
+
 	vector<passport> passports;
 	string line, p;
-	int necessaryFields, validFields;
-
-	if (argc != 2)
-	{
-		cout << "Usage: 2020day4.exe data" << endl;
-		exit(0);
-	}
-
-	fin.open(argv[1]);
-	if (!fin.is_open())
-	{
-		cout << "Unable to open file " << argv[1] << endl;
-		exit(0);
-	}
 
 	while (getline(fin, line))
 	{
@@ -63,27 +52,17 @@ int main(int argc, char** argv)
 			p += line + ' ';
 		}
 	}
-
-	/*for (int i = 0; i < (int)passports.size(); i++)
-	{
-		cout << passports[i].birthYear << endl;
-	}*/
-	
 	addPassport(passports, p);
 
-	necessaryFields = solveFields(passports);
+	fin.close();
 
-	cout << "Passports with necessary fields" << endl << necessaryFields << endl;
+	cout << "Passports with necessary fields" << endl << solveFields(passports) << endl;
 
-	validFields = solveValidatedFields(passports);
-
-	cout << "Passports with validated fields" << endl << validFields << endl;
+	cout << "Passports with validated fields" << endl << solveValidatedFields(passports) << endl;
 }
 
 void addPassport(vector<passport>& passports, string& p)
 {
-	vector<string> fields = { "byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid" };
-
 	passport pass;
 	for (int i = 0; i < (int)fields.size(); i++)
 	{

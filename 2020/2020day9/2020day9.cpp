@@ -1,4 +1,6 @@
 #include "../../max.h"
+#include <iostream>
+#include <fstream>
 
 using namespace std;
 
@@ -6,7 +8,7 @@ int solveFirstWrongNumber(vector<long long> numbers);
 vector<long long> subset(vector<long long> arr, int min, int max);
 long long solveEncryptionWeakness(vector<long long> numbers, int invalidNumIndex);
 
-int main(int argc, char** argv)
+int main()
 {
 	ifstream fin;
 	fin.open("data.txt");
@@ -20,6 +22,8 @@ int main(int argc, char** argv)
 	{
 		numbers.push_back(value);
 	}
+
+	fin.close();
 
 	firstInvalidIndex = solveFirstWrongNumber(numbers);
 
