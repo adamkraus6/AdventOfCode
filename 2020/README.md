@@ -15,3 +15,14 @@
 | [Day 11: Seating System](2020day11) | :heavy_check_mark: | :heavy_check_mark: | :x: |
 | [Day 12: Rain Risk](2020day12) | :heavy_check_mark: | :heavy_check_mark: | :heavy_minus_sign: |
 | [Day 13: Shuttle Search](2020day13) | :heavy_check_mark: | :heavy_exclamation_mark: | :x: |
+| [Day 14: Docking Data](2020day14) | :x: | :x: | :x: |
+
+### Meaning
+
+:x: - Not Completed
+
+:heavy_check_mark: - Completed
+
+:heavy_exclamation_mark: - Needs Attention
+
+:heavy_minus_sign: - Not Needed
