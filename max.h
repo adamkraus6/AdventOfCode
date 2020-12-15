@@ -88,3 +88,39 @@ std::vector<long long> subset(std::vector <long long> arr, int min, int max)
 
     return sub;
 }
+
+void sTrim(std::string& str)
+{
+    bool empty = true;
+    for (auto it = str.begin(); it != str.end(); it++)
+    {
+        if (!isspace(*it))
+        {
+            empty = false;
+        }
+    }
+    if (empty)
+    {
+        str.clear();
+        return;
+    }
+    if (str.empty()) return;
+
+    for (auto it = str.begin(); it != str.end(); it++)
+    {
+        if (!isspace(*it))
+        {
+            str.erase(str.begin(), it);
+            break;
+        }
+    }
+
+    for (auto it = str.end() - 1; it != str.begin(); --it)
+    {
+        if (!isspace(*it))
+        {
+            str.erase(it + 1, str.end());
+            break;
+        }
+    }
+}
