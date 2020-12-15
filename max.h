@@ -1,10 +1,7 @@
-#include <iostream>
-#include <fstream>
 #include <string>
 #include <vector>
 #include <sstream>
 #include <numeric>
-#include <functional>
 #include <algorithm>
 
 std::vector<std::string> split(const std::string& s, char delimiter)
