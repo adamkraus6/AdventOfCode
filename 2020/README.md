@@ -17,6 +17,7 @@
 | [Day 13: Shuttle Search](2020day13) | :heavy_check_mark: | :heavy_exclamation_mark: | :x: |
 | [Day 14: Docking Data](2020day14) | :x: | :x: | :x: |
 | [Day 15: Rambunctious Recitation](2020day15) | :x: | :x: | :x: |
+| [Day 16: Ticket Translation](2020day16) | :heavy_check_mark: | :x: | :x: |
 
 ### Meaning
 
