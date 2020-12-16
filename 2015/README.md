@@ -3,6 +3,7 @@
 | Problem | Part 1: | Part 2 | Refactored |
 | ------- | ------- | ------ | ---------- |
 | [Day 1: Not Quite Lisp](2015day1) | :heavy_check_mark: | :heavy_check_mark: | :x: |
+| [Day 2: I Was Told There Would Be No Math](2015day2) | :heavy_check_mark: | :heavy_check_mark: | :x: |
 
 ### Meaning
 
