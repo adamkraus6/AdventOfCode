@@ -6,6 +6,7 @@
 using namespace std;
 
 int niceStrings(vector<string> strings);
+int betterNiceStrings(vector<string> strings);
 
 int main()
 {
@@ -20,6 +21,8 @@ int main()
 	}
 
 	cout << "Nice Strings" << endl << niceStrings(strings) << endl;
+
+	cout << "Better Nice Strings" << endl << betterNiceStrings(strings) << endl;
 }
 
 int niceStrings(vector<string> strings)
@@ -53,6 +56,48 @@ int niceStrings(vector<string> strings)
 
 
 		if (vowels >= 3 && twiceRow && other)
+		{
+			nice++;
+		}
+	}
+
+	return nice;
+}
+
+int betterNiceStrings(vector<string> strings)
+{
+	int nice = 0;
+
+	for (string str : strings)
+	{
+		bool repeatSpace = false;
+		for (int i = 0; i < str.length() - 2; i++)
+		{
+			if (str[i] == str[i + 2])
+			{
+				repeatSpace = true;
+				break;
+			}
+		}
+
+		bool repeatPair = false;
+		for (int i = 0; i < str.length() - 3; i++)
+		{
+			string pair1 = str.substr(i, 2);
+			for (int j = i + 2; j < str.length(); j++)
+			{
+				string pair2 = str.substr(j, 2);
+				if (pair1 == pair2)
+				{
+					repeatPair = true;
+					goto end;
+				}
+			}
+		}
+
+		end:
+
+		if (repeatSpace && repeatPair)
 		{
 			nice++;
 		}
