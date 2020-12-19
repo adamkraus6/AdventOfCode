@@ -6,6 +6,7 @@
 | [Day 2: I Was Told There Would Be No Math](2015day2) | :heavy_check_mark: | :heavy_check_mark: | :x: |
 | [Day 3: Perfectly Spherical Houses in a Vacuum](2015day3) | :heavy_check_mark: | :heavy_check_mark: | :x: |
 | [Day 4: The Ideal Stocking Stuffer](2015day4) | :heavy_check_mark: | :heavy_check_mark: | :x: |
+| [Day 5: Doesn't He Have Intern-Evles For This?](2015day5) | :heavy_check_mark: | :heavy_check_mark: | :x: |
 
 ### Meaning
 
