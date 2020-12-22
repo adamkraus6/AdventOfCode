@@ -8,6 +8,8 @@
 | [Day 4: The Ideal Stocking Stuffer](2015day4) | :heavy_check_mark: | :heavy_check_mark: | :x: |
 | [Day 5: Doesn't He Have Intern-Evles For This?](2015day5) | :heavy_check_mark: | :heavy_check_mark: | :x: |
 | [Day 6: Probably A Fire Hazard](2015day6) | :heavy_check_mark: | :heavy_check_mark: | :x: |
+| [Day 7: Some Assembly Required](2015day7) | :x: | :x: | :x: |\
+| [Day 8: Matchsticks](2015day8) | :x: | :x: | :x: |
 
 ### Meaning
 
