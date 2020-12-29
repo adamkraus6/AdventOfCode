@@ -2,7 +2,7 @@
 
 | Problem | Part 1: | Part 2 | Refactored |
 | ------- | ------- | ------ | ---------- |
-| [Day 1: The Tyranny of the Rocket Equation](2019day1) | :heavy_check_mark: | :heavy_check_mark: | :x: |
+| [Day 1: ???](.) | :x: | :x: | :x: |
 | [Day 2: ???](.) | :x: | :x: | :x: |
 | [Day 3: ???](.) | :x: | :x: | :x: |
 | [Day 4: ???](.) | :x: | :x: | :x: |

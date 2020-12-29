@@ -18,6 +18,15 @@
 | [Day 14: Docking Data](2020day14) | :x: | :x: | :x: |
 | [Day 15: Rambunctious Recitation](2020day15) | :x: | :x: | :x: |
 | [Day 16: Ticket Translation](2020day16) | :heavy_check_mark: | :x: | :x: |
+| [Day 17: ???](.) | :x: | :x: | :x: |
+| [Day 18: ???](.) | :x: | :x: | :x: |
+| [Day 19: ???](.) | :x: | :x: | :x: |
+| [Day 20: ???](.) | :x: | :x: | :x: |
+| [Day 21: ???](.) | :x: | :x: | :x: |
+| [Day 22: ???](.) | :x: | :x: | :x: |
+| [Day 23: ???](.) | :x: | :x: | :x: |
+| [Day 24: ???](.) | :x: | :x: | :x: |
+| [Day 25: ???](.) | :x: | :x: | :x: |
 
 ### Meaning
 
