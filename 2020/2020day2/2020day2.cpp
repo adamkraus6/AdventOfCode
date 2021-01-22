@@ -1,5 +1,4 @@
 #include "../../max.h"
-#include <fstream>
 #include <iostream>
 
 using namespace std;
@@ -8,20 +7,13 @@ int solveOccValid(vector<string> passwords);
 int solvePosValid(vector<string> passwords);
 
 int main()
-{
-	ifstream fin;
-	fin.open("data.txt");
-	if (!fin.is_open()) exit(0);
-
-	vector<string> passwords;
+{vector<string> passwords;
 	string line;
 
-	while (getline(fin, line))
+	while (getline(cin, line))
 	{
 		passwords.push_back(line);
 	}
-
-	fin.close();
 
 	cout << "Valid passwords based on letter occurences: " << endl << solveOccValid(passwords) << endl;
 
@@ -40,7 +32,7 @@ int solveOccValid(vector<string> passwords)
 		char target = parts[1].at(0);
 
 		int occ = 0;
-		for (int j = 0; j < parts[2].length(); j++)
+		for (int j = 0; j < (int)parts[2].length(); j++)
 		{
 			if (parts[2].at(j) == target) occ++;
 		}
