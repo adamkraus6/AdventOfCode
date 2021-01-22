@@ -13,7 +13,7 @@ std::vector<std::string> split(const std::string& s, char delimiter)
     return tokens;
 }
 
-template <typename T, typename A = allocator<T>>
+template <typename T, typename A>
 std::vector<T, A> sumNum(std::vector<T, A> arr, int k, T sum, int layer = 0, std::vector<T, A> numbers = {}, std::vector<bool> used = {})
 {
     // check default values
