@@ -1,7 +1,5 @@
+#include "../../max.h"
 #include <iostream>
-#include <fstream>
-#include <vector>
-#include <string>
 
 using namespace std;
 
@@ -9,20 +7,14 @@ long long treesEncountered(vector<string>& layers, int right, int down);
 
 int main()
 {
-	ifstream fin;
-	fin.open("data.txt");
-	if (!fin.is_open()) exit(0);
-
 	vector<string> layers;
-	long long slopeProduct;
+	unsigned long long slopeProduct;
 	string line;
 
-	while (getline(fin, line))
+	while (getline(cin, line))
 	{
 		layers.push_back(line);
 	}
-
-	fin.close();
 
 	cout << "Trees encountered: " << endl << treesEncountered(layers, 3, 1) << endl;
 
@@ -38,7 +30,7 @@ long long treesEncountered(vector<string>& layers, int right, int down)
 
 	for (int i = 0; i < (int)layers.size() - down; i += down)
 	{
-		posToCheck = (pos + right) % length;
+		posToCheck = (pos + right) % (length - 1);
 
 		if (layers[i + down].at(posToCheck) == '#')
 		{
