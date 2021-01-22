@@ -1,24 +1,17 @@
 #include "../../max.h"
-#include <fstream>
 #include <iostream>
 
 using namespace std;
 
 int main()
 {
-	ifstream fin;
-	fin.open("data.txt");
-	if (!fin.is_open()) exit(0);
-
 	vector<int> numbers;
 	int num;
 
-	while (fin >> num)
+	while (cin >> num)
 	{
 		numbers.push_back(num);
 	}
-
-	fin.close();
 
 	sort(numbers.begin(), numbers.end());
 
