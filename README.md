@@ -9,6 +9,8 @@ You don't need a computer science background to participate - just a little prog
 
 I chose to complete these problems in C++, after finishing a course learning it. Many of my solutions have not be very nice, but I hope to come back to them at some point to refactor them.
 
+In 2021 I began learning python so I will complete the 2021 problems with python.
+
 ### Puzzle Inputs
 
 In each project folder for a given day, data.txt will be the puzzle input that I was given. Any other data files, like data2.txt, are examples given from the problem explanation.
@@ -17,6 +19,7 @@ In each project folder for a given day, data.txt will be the puzzle input that I
 
 | Year |
 | ---- |
+| [2021](2021) |
 | [2020](2020) |
 | [2019](2019) |
 | [2018](2018) |
