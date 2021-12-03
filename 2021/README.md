@@ -3,7 +3,7 @@
 | Problem | Part 1: | Part 2 | Refactored |
 | ------- | ------- | ------ | ---------- |
 | [Day 1: Sonar Sweep](2021day1) | :heavy_check_mark: | :heavy_check_mark: | :x: |
-| [Day 2: ???](.) | :x: | :x: | :x: |
+| [Day 2: Dive!](2020day2) | :heavy_check_mark: | :heavy_check_mark: | :x: |
 | [Day 3: ???](.) | :x: | :x: | :x: |
 | [Day 4: ???](.) | :x: | :x: | :x: |
 | [Day 5: ???](.) | :x: | :x: | :x: |
