@@ -19,6 +19,7 @@ In each project folder for a given day, data.txt will be the puzzle input that I
 
 | Year |
 | ---- |
+| [2023](2023) |
 | [2021](2021) |
 | [2020](2020) |
 | [2019](2019) |
